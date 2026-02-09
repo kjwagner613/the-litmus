@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --ink: #101213;
+  --muted: #5b5f66;
+  --paper: #f7f3ee;
+  --accent: #c04a2b;
+  --accent-deep: #7d2f1a;
+  --fog: #efe9e1;
+  --line: #d6cec4;
+  --shadow: rgba(16, 18, 19, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(1200px 800px at 10% -10%, #fff6e9 0%, transparent 60%),
+    radial-gradient(900px 700px at 100% 0%, #f2e6d8 0%, transparent 60%),
+    linear-gradient(180deg, #fff9f2 0%, #f7f3ee 45%, #f1ebe2 100%);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero {
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 40px -25px var(--shadow);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(192, 74, 43, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", "Times New Roman", Times, serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.subhead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 38rem;
+}
+
+.card {
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 35px -30px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card h2 {
+  font-size: 1.65rem;
+}
+
+.rule h3 {
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+}
+
+.rule p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.note {
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 0;
+}
+
+.pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill-list li {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+.divider {
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  position: relative;
+  padding: 12px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 28%;
+  height: 1px;
+  background: var(--line);
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.test-list {
+  counter-reset: item;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.test-list li {
+  border-left: 4px solid var(--accent);
+  padding-left: 16px;
+}
+
+.test-list h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.test-list p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 32px 18px 60px;
+  }
+
+  .hero,
+  .card {
+    padding: 22px;
+  }
+
+  .divider::before,
+  .divider::after {
+    width: 18%;
+  }
+}
